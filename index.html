@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Navigation Bar</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <style>
+      body{
+      background-image: url(images/bg.jpeg) !important;
+      background-repeat:no-repeat; 
+      background-size: cover;
+    }
+    </style>
+    <nav>
+      <div class="logo-container">
+        <img src="images/Maury logo.png" alt="Maury Logo" class="logo" />
+      </div>
+      <div class="menu-icon" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="dropdown-menu" id="dropdownMenu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="chainofcommand.html">Chain of Command</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="social-icons">
+          <a href="#"><img src="images/Instagram.png" alt="Instagram" /></a>
+          <a href="#"><img src="images/Facebook.png" alt="Facebook" /></a>
+        </div>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="chainofcommand.html">Chain of Command</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="social-icons">
+        <a href="#"><img src="images/Instagram.png" alt="Instagram" /></a>
+        <a href="#"><img src="images/Facebook.png" alt="Facebook" /></a>
+      </div>
+      <!-- Add this inside the <nav> element -->
+<div class="menu-icon">
+  <div class="bar"></div>
+  <div class="bar"></div>
+  <div class="bar"></div>
+</div>
+
+    </nav>
+    <div class="button-container">
+      <button class="button">About Us</button>
+      <h1 class="overlay-text">Maury NJROTC</h1>
+      <!-- Add the overlay text here -->
+    </div>
+  
+    
+    <script>
+      /* JavaScript function to toggle menu */
+      function toggleMenu() {
+        var menu = document.getElementById("dropdownMenu");
+        if (menu.style.display === "block") {
+          menu.style.display = "none";
+        } else {
+          menu.style.display = "block";
+        }
+      }
+    </script>
+
+    <!-- About Page -->
+    <section class="about-section">
+      <h1>About Us</h1>
+      <p>Welcome to the About Us page of Maury NJROTC. Here you can find information about our mission, goals, and history.</p>
+      <p>Our Mission:</p>
+      <p>The mission of Maury NJROTC is to develop young men and women mentally, morally, and physically, and instill in them the highest ideals of honor, courage, and commitment. We strive to prepare cadets for success in their future endeavors, whether in military service, college, or civilian careers.</p>
+      <p>Our Goals:</p>
+      <ul>
+        <li>Provide leadership training and opportunities for personal growth.</li>
+        <li>Foster a sense of discipline, responsibility, and teamwork.</li>
+        <li>Promote academic excellence and character development.</li>
+        <li>Engage in community service and support local initiatives.</li>
+        <li>Prepare cadets for the rigors of military life and service to their country.</li>
+      </ul>
+      <p>History:</p>
+      <p>Maury NJROTC was established in 1985 and has since become a cornerstone of our school community. Over the years, our unit has earned numerous awards and accolades for excellence in leadership, drill, marksmanship, and community service. We are proud of our cadets' achievements and look forward to continuing our tradition of excellence for years to come.</p>
+    </section>
+    <footer>
+      <p>Proudly Serving the Maury Community</p>
+    </footer>
+  </body>
+</html>

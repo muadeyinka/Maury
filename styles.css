@@ -1,0 +1,407 @@
+/* Reset styles */
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #272c48, #6b70a4);
+  animation: fadeInAnimation 1s ease forwards;
+}
+
+@keyframes fadeInAnimation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Navigation bar styles */
+nav {
+  background-color: #272c48;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  animation: bounceInAnimation 1s ease;
+}
+
+@keyframes bounceInAnimation {
+  0% {
+    transform: translateY(-100%);
+  }
+  25% {
+    transform: translateY(20px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  75% {
+    transform: translateY(5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 50px;
+  margin-left: 10rem;
+}
+
+/* Logo styles for mobile */
+@media (max-width: 768px) {
+  .logo {
+    margin-left: 2rem;
+  }
+}
+
+.nav-links {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  margin-right: 2rem;
+}
+
+.nav-links li {
+  margin-left: 20px;
+}
+
+.nav-links li:last-child {
+  margin-right: 0;
+}
+
+.nav-links a {
+  color: #ff4500;
+  text-decoration: none;
+  position: relative;
+  padding: 8px 12px;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #ff4500;
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.social-icons {
+  display: flex;
+  margin-right: 5rem;
+}
+
+.social-icons a {
+  margin-right: 30px;
+  transition: transform 0.3s ease;
+}
+
+.social-icons a:hover {
+  transform: scale(1.1);
+}
+
+.social-icons img {
+  width: 30px;
+  height: auto;
+}
+
+/* Footer styles */
+footer {
+  background-color: #272c48;
+  color: #ff4500;
+  padding: 5px;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+/* Button styles */
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.button {
+  padding: 20px 40px;
+  background-color: #272c48;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  animation: pulsateAnimation 1s infinite alternate;
+}
+
+.button:hover {
+  background-color: #1e2140;
+}
+
+@keyframes pulsateAnimation {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.05);
+  }
+}
+
+main {
+  padding: 20px;
+}
+
+.about-section {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.about-section h1 {
+  color: #272c48;
+}
+
+.about-section p {
+  color: #666;
+}
+
+.about-section ul {
+  color: #666;
+  list-style-type: disc;
+}
+
+.about-section ul li {
+  margin-left: 20px;
+}
+
+/* Overlay text styles */
+.overlay-text {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  color: #ff4500;
+  font-size: 70px;
+  z-index: 2;
+  animation: fadeInScale 0.5s ease forwards;
+}
+
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+/* Mobile Screen */
+@media (max-width: 768px) {
+  /* Navigation bar styles */
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    background-color: #272c48;
+    width: 100%;
+    padding: 20px;
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+  }
+
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 0;
+  }
+
+  /* Hide the social icons on mobile */
+  .social-icons {
+    display: none;
+  }
+
+  /* Show and hide navigation links when hamburger icon is clicked */
+  .menu-icon {
+    display: block;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 70px;
+    z-index: 1001;
+  }
+  
+  .menu-icon span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px 0;
+    transition: transform 0.3s ease;
+  }
+  
+  .menu-icon.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  
+  .menu-icon.active span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .menu-icon.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+  
+  /* Adjust overlay text size on mobile */
+  .overlay-text {
+    font-size: 40px;
+  }
+
+  /* Adjust size of social icons in dropdown menu */
+  .dropdown-menu .social-icons img {
+    width: 20px;
+    height: auto;
+  }
+
+  /* Dropdown menu styles */
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #272c48;
+    width: 100%;
+    padding: 10px;
+  }
+
+  .dropdown-menu ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .dropdown-menu li {
+    margin-bottom: 10px;
+  }
+
+  .dropdown-menu a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 12px;
+    display: block;
+  }
+
+  .dropdown-menu a:hover {
+    background-color: #ff4500;
+  }
+
+}
+
+/* Hide dropdown menu on desktop view */
+@media (min-width: 769px) {
+  .dropdown-menu {
+    display: none !important;
+  }
+
+  .menu-icon {
+    display: none;
+  }
+
+  .nav-links {
+    display: flex !important;
+    margin-left: auto;
+  }
+
+  .social-icons {
+    display: flex !important;
+  }
+}
+
+/* Chain of Command styles */
+.chain-of-command {
+  padding: 100px 20px 20px;
+  text-align: center;
+}
+
+.chain-header {
+  margin-bottom: 50px;
+}
+
+.chain-header h1 {
+  font-size: 36px;
+  color: #272c48;
+  margin-bottom: 10px;
+}
+
+.chain-row {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.chain-item {
+  text-align: center;
+  margin-top: 20px;
+  flex: 1;
+  max-width: 230px;
+}
+
+.chain-item img {
+  height: 300px;
+  width: 230px;
+  border-radius: 7%;
+  margin-bottom: 10px;
+}
+
+.margin1 {
+  margin-left: 27rem;
+}
+
+.margin2 {
+  margin-right: 27rem;
+}
+
+.margin3 {
+  margin-left: 20rem;
+}
+
+.margin4 {
+  margin-right: 0rem;
+}
+
+.margin5 {
+  margin-right: 20rem;
+}
+
+.malik {
+  margin-right: 10rem;
+}
+
+.sama {
+  margin-left: 10rem;
+}
